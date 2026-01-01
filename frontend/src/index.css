@@ -210,7 +210,7 @@ input:focus {
   border: 1px solid #dcfce7;
 }
 
-/* Micro-animations */
+
 .fade-in {
   animation: fadeIn 0.5s ease-out;
 }
@@ -227,7 +227,7 @@ input:focus {
   }
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 480px) {
   .container {
     padding: 1rem;

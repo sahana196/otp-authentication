@@ -36,8 +36,7 @@ export const fetchUser = async (token) => {
     const response = await fetch(`${API_URL}/me`, {
         method: 'GET',
         headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
+            'Authorization': `Bearer ${token}`
         },
     });
 

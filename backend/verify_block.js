@@ -1,7 +1,3 @@
-// Node fetch removed to use native http
-
-// If node-fetch is not there, we can use http.
-// Actually, let's use standard http to be dependency-free in this script.
 const http = require('http');
 
 const data = JSON.stringify({ identifier: 'verify-logic-user', otp: '000000' });

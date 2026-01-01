@@ -43,7 +43,7 @@ async function runTests() {
 
     const testUser = `test-user-${Date.now()}@example.com`;
 
-    // 1. Request OTP
+
     console.log(`\nTest 1: Requesting OTP for ${testUser}...`);
     const reqRes = await request('/auth/request-otp', 'POST', { identifier: testUser });
     console.log('Status:', reqRes.status);
@@ -54,11 +54,9 @@ async function runTests() {
         process.exit(1);
     }
 
-    // Since we can't easily automate reading the console log of the running server,
-    // we'll assume the OTP is generated. For verification logic tests (blocking),
-    // we'll use a wrong OTP intentionally.
 
-    // 2. Verify with WRONG OTP (Attempt 1)
+
+
     console.log('\nTest 2: Verifying with WRONG OTP (Attempt 1)...');
     let verifyRes = await request('/auth/verify-otp', 'POST', { identifier: testUser, otp: '000000' });
     console.log('Status:', verifyRes.status);
@@ -67,7 +65,7 @@ async function runTests() {
         console.error('FAILED: Status should be 401 and attemptsRemaining should be 2');
     }
 
-    // 3. Verify with WRONG OTP (Attempt 2)
+
     console.log('\nTest 3: Verifying with WRONG OTP (Attempt 2)...');
     verifyRes = await request('/auth/verify-otp', 'POST', { identifier: testUser, otp: '000000' });
     console.log('Status:', verifyRes.status);
@@ -76,7 +74,7 @@ async function runTests() {
         console.error('FAILED: Status should be 401 and attemptsRemaining should be 1');
     }
 
-    // 4. Verify with WRONG OTP (Attempt 3 - Should Block)
+
     console.log('\nTest 4: Verifying with WRONG OTP (Attempt 3 - BLOCK)...');
     verifyRes = await request('/auth/verify-otp', 'POST', { identifier: testUser, otp: '000000' });
     console.log('Status:', verifyRes.status);
@@ -85,7 +83,7 @@ async function runTests() {
         console.error('FAILED: Status should be 403 and message should include "blocked"');
     }
 
-    // 5. Request OTP while BLOCKED
+
     console.log('\nTest 5: Requesting OTP while BLOCKED...');
     const blockedReqRes = await request('/auth/request-otp', 'POST', { identifier: testUser });
     console.log('Status:', blockedReqRes.status);
