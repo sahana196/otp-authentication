@@ -57,6 +57,7 @@ App runs at `http://localhost:5173`.
 ## Screenshots
 ![Screenshot 1](output%20screenshots/Screenshot%20(415).png)
 ![Screenshot 2](output%20screenshots/Screenshot%20(416).png)
+![Screenshot 2](output%20screenshots/Screenshot%20(417).png)
 ![Screenshot 4](output%20screenshots/Screenshot%20(419).png)
 ![Screenshot 5](output%20screenshots/Screenshot%20(420).png)
 ![Screenshot 6](output%20screenshots/Screenshot%20(421).png)
