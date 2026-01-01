@@ -53,3 +53,12 @@ App runs at `http://localhost:5173`.
 ## Tech Stack
 - **Frontend**: React, Vite, CSS.
 - **Backend**: Node.js, Express.
+
+## Screenshots
+![Screenshot 1](output%20screenshots/Screenshot%20(415).png)
+![Screenshot 2](output%20screenshots/Screenshot%20(416).png)
+![Screenshot 3](output%20screenshots/Screenshot%20(417).png)
+![Screenshot 4](output%20screenshots/Screenshot%20(419).png)
+![Screenshot 5](output%20screenshots/Screenshot%20(420).png)
+![Screenshot 6](output%20screenshots/Screenshot%20(421).png)
+![Screenshot 7](output%20screenshots/Screenshot%20(424).png)
