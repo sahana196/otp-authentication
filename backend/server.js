@@ -5,7 +5,28 @@ const app = express();
 const PORT = 3000;
 
 app.use(cors());
+
+// Log all requests
+app.use((req, res, next) => {
+    console.log(`[Request] ${req.method} ${req.url}`);
+
+    // Strip Content-Type for GET requests to prevent express.json() from parsing body
+    if (req.method === 'GET') {
+        delete req.headers['content-type'];
+    }
+
+    next();
+});
+
 app.use(express.json());
+
+app.use((err, req, res, next) => {
+    console.error('[Middleware Error]', err); // Log the error to console
+    if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+        return res.status(400).json({ message: 'Invalid JSON payload provided. Please check your request body (Make sure to select "None" in Body tab for GET requests).' });
+    }
+    next(err);
+});
 
 const otpStore = {};
 
